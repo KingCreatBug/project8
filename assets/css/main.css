@@ -1295,8 +1295,8 @@ select {
 }
 html {
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(5%) sepia(27%)
-      saturate(5015%) hue-rotate(236deg) brightness(97%) contrast(91%);
+  --icon-color: brightness(0) saturate(100%) invert(5%) sepia(27%) saturate(5015%) hue-rotate(236deg) brightness(97%)
+      contrast(91%);
   --body-bg-color: #f6f6f6;
   --header-bg-color: #eee;
   --top-act-group-bg-color: #fff;
@@ -1305,6 +1305,8 @@ html {
   --dropdown-arrow-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
   --top-menu-border-color: #d2d1d6;
+  --sidebar-bg: #fff;
+  --sidebar-shadow: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1315,8 +1317,8 @@ html {
 
 html.dark {
   --text-color: #ffffff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%)
-      saturate(1%) hue-rotate(119deg) brightness(101%) contrast(101%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%) hue-rotate(119deg) brightness(101%)
+      contrast(101%);
   --body-bg-color: #292e39;
   --header-bg-color: #171c28;
   --top-act-group-bg-color: #292e39;
@@ -1324,12 +1326,13 @@ html.dark {
   --top-act-group-separate: #ededf6;
   --dropdown-arrow-color: #292e39;
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
-  --dropdown-bg-color: brightness(0) saturate(100%) invert(14%) sepia(18%)
-      saturate(721%) hue-rotate(182deg) brightness(94%) contrast(88%);
+  --dropdown-bg-color: brightness(0) saturate(100%) invert(14%) sepia(18%) saturate(721%) hue-rotate(182deg)
+      brightness(94%) contrast(88%);
   --top-menu-border-color: #171c28;
-  --menu-column-icon-color: brightness(0) saturate(100%) invert(100%)
-      sepia(13%) saturate(899%) hue-rotate(180deg) brightness(100%)
-      contrast(97%);
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(100%) sepia(13%) saturate(899%) hue-rotate(180deg)
+      brightness(100%) contrast(97%);
+  --sidebar-bg: #292e39;
+  --sidebar-shadow: rgba(23, 28, 40, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1382,16 +1385,23 @@ html.dark {
     z-index: 9;
     padding: 20px 0;
     margin-left: 0;
-    background: #fff;
+    border-radius: 0px 20px 20px 0px;
+    background: var(--sidebar-bg);
     translate: -100%;
     transition: translate 0.5s;
   }
   .navbar.show {
     translate: 0;
+    box-shadow: 0px 40px 90px 20px var(--sidebar-shadow);
   }
   .navbar.show ~ .navbar__overlay {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media (max-width: 991.98px) and (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
   }
 }
 .navbar__overlay {
@@ -1416,12 +1426,28 @@ html.dark {
     padding: 10px 40px;
   }
 }
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding: 0 20px 10px;
+  }
+}
 @media (max-width: 991.98px) {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
     overflow-y: auto;
-    height: calc(100% - 26px);
+    overscroll-behavior: contain;
+    height: calc(100% - 45px);
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar__list {
+    height: calc(100% - 145px);
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__list {
+    height: calc(100% - 125px);
   }
 }
 .navbar__item:hover .dropdown {
@@ -1452,6 +1478,12 @@ html.dark {
     padding: 0 40px;
     font-size: 1.6rem;
     line-height: 1.5;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__link {
+    height: 44px;
+    padding: 0 20px;
   }
 }
 .navbar__arrow {
@@ -1513,6 +1545,29 @@ html.dark {
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.nav-btn {
+  height: 50px;
+  align-items: center;
+  padding: 0 40px;
+}
+.nav-btn__title, .nav-btn__qnt {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.46;
+}
+.nav-btn__title {
+  margin-left: 16px;
+}
+.nav-btn__qnt {
+  margin-left: auto;
+}
+@media (max-width: 575.98px) {
+  .nav-btn {
+    height: 44px;
+    padding: 0 20px;
+  }
 }
 
 .logo {
@@ -1585,6 +1640,11 @@ html.dark {
   }
   .dropdown__inner::before {
     content: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .dropdown__inner {
+    padding: 0 20px;
   }
 }
 
