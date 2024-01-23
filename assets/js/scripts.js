@@ -154,7 +154,9 @@ function initJsToggle() {
         if (!target) {
             document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
         }
-        button.onclick = () => {
+        button.onclick = (e) => {
+            e.preventDefault();
+
             if (!$(target)) {
                 return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
             }
@@ -164,6 +166,14 @@ function initJsToggle() {
                 $(target).classList.toggle("hide", !isHidden);
                 $(target).classList.toggle("show", isHidden);
             });
+        };
+        document.onclick = function (e) {
+            if (!e.target.closest(target)) {
+                const isHidden = $(target).classList.contains("hide");
+                if (!isHidden) {
+                    button.click();
+                }
+            }
         };
     });
 }
@@ -182,7 +192,7 @@ window.addEventListener("template-loaded", () => {
 
 // Slide Show
 // Cách dùng thêm class="mySlides" vào các slideshow
-let slideIndex = 1;
+let slideIndex = 0;
 showSlides();
 
 function showSlides() {
