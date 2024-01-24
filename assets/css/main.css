@@ -1338,6 +1338,7 @@ html {
   --filter-form-bg-color: #fff;
   --filter-form-drop-shadow-color: rgba(200, 200, 200, 0.4);
   --filter-form-tag-bg-color: #f8f8fb;
+  --footer-bg-color: #fff;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1382,6 +1383,7 @@ html.dark {
   --filter-form-tag-bg-color: #171c28;
   --filter-form-arrow-color: brightness(0) saturate(100%) invert(14%) sepia(18%) saturate(721%) hue-rotate(182deg)
       brightness(94%) contrast(88%);
+  --footer-bg-color: #171c28;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1618,6 +1620,118 @@ html.dark {
     height: 44px;
     padding: 0 20px;
   }
+}
+
+.footer {
+  padding: 30px;
+  margin-top: 80px;
+  border-radius: 20px 20px 0 0;
+  background: var(--footer-bg-color);
+}
+.footer__top {
+  display: flex;
+}
+@media (max-width: 575.98px) {
+  .footer__top {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer__logo {
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 0 !important;
+  margin-right: 20%;
+}
+@media (max-width: 1399.98px) {
+  .footer__logo {
+    margin-right: 10%;
+  }
+}
+@media (max-width: 991.98px) {
+  .footer__logo {
+    margin-right: 20%;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__logo {
+    margin-right: 10%;
+  }
+}
+@media (max-width: 575.98px) {
+  .footer__logo {
+    margin: 0 0 30px 0;
+  }
+}
+.footer__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: flex-start;
+  gap: 100px;
+}
+@media (max-width: 1199.98px) {
+  .footer__row {
+    gap: 50px;
+  }
+}
+@media (max-width: 991.98px) {
+  .footer__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__row {
+    gap: 50px;
+  }
+}
+@media (max-width: 575.98px) {
+  .footer__row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+.footer__link {
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.footer__link:first-child {
+  padding-top: 0;
+}
+.footer__link:hover {
+  opacity: 0.8;
+}
+.footer__separate {
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  background: #eee;
+}
+.footer__icon-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+}
+.footer__icon--item {
+  width: 30px;
+}
+@media (max-width: 767.98px) {
+  .footer__icon--item {
+    width: 20px;
+  }
+}
+.footer__icon--item:hover {
+  opacity: 0.8;
+}
+.footer__copyright {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 
 .logo {
