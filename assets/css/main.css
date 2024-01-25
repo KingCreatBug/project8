@@ -2619,6 +2619,37 @@ html.dark {
   display: block;
 }
 
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+}
+@media (max-width: 991.98px) {
+  .message {
+    padding: 14px 10px;
+  }
+}
+@media (max-width: 575.98px) {
+  .message {
+    padding: 14px 5px;
+  }
+}
+.message--success {
+  border: 1.5px solid #484ca6;
+  background: rgba(153, 204, 255, 0.2784313725);
+}
+.message--title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+}
+.message--icon {
+  width: 20px;
+}
+
 .home__container {
   margin-top: 40px;
 }
@@ -2699,7 +2730,7 @@ html.dark {
   }
 }
 .auth__intro-img {
-  max-width: 100%;
+  width: min(424px, 100%);
 }
 .auth__content {
   background: var(--auth-content-bg-color);
@@ -2751,9 +2782,15 @@ html.dark {
     font-size: 1.4rem;
   }
 }
+.auth__message {
+  margin-top: 30px;
+}
 .auth__form {
   width: 100%;
   margin-top: 30px;
+}
+.auth__form-forgot {
+  margin-top: 10px;
 }
 @media (max-width: 767.98px) {
   .auth__form {
