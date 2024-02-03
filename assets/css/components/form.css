@@ -48,7 +48,7 @@
   align-items: center;
   padding: 0 12px;
   border-radius: 10px;
-  border: 1.5px solid #d2d1d6;
+  border: 1px solid #d2d1d6;
 }
 .form__text-area:focus-within, .form__text-input:focus-within {
   border-color: #77dae6;
@@ -234,7 +234,7 @@
   width: 19px;
   height: 19px;
   border-radius: 5px;
-  border: 1.5px solid #9e9da8;
+  border: 1px solid #9e9da8;
 }
 .form__checkbox::after {
   top: 5px;
@@ -263,6 +263,11 @@
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 1.45;
+}
+.form__label--medium {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 1.44;
 }
 .form__label--small {
   margin-bottom: 10px;
@@ -298,13 +303,13 @@
     flex: 1;
   }
 }
-+ .form__select__select {
-  border-left: 1px solid #d2d1d6;
-}
 .form__select-separate {
   width: 1px;
   height: 80%;
   background: #9e9da8;
+}
+.form__select + .form__select {
+  border-left: 1px solid #d2d1d6;
 }
 .form__tags {
   display: flex;
