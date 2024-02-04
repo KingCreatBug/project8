@@ -4027,12 +4027,20 @@ html.dark {
   justify-content: space-between;
   gap: 30px;
 }
+.cart-info__back-arrow {
+  position: relative;
+  top: 4px;
+  width: 50px;
+  padding-right: 20px;
+}
 .cart-info__heading {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.41;
 }
 .cart-info__heading--lv2 {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 2.2rem;
   line-height: 1.45;
@@ -4575,6 +4583,16 @@ html.dark {
 }
 .profile__desc {
   margin-bottom: 16px;
+}
+
+.form-card__label {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+.form-card__bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
