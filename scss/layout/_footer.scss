@@ -1,6 +1,7 @@
 @use "../abstracts";
 
 .footer {
+    margin-top: 50px;
     background: var(--footer-bg-color);
 
     &__inner {
