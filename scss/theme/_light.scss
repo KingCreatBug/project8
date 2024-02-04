@@ -10,6 +10,7 @@ html {
     --top-act-group-bg-color: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
     --top-act-group-separate: #ededf6;
+    --separate-bg-color: #d2d1d6;
 
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
@@ -116,4 +117,13 @@ html {
     // Dialog
     --dialog-bg-color: #fff;
     --dialog-shadow-color: rgba(237, 237, 246, 0.2);
+
+    // Profile
+    --profile-sidebar-bg-color: #fff;
+    --profile-sidebar-shadow-color: rgba(237, 237, 246, 0.2);
+    --profile-sidebar-link-hover-color: #ebebeb;
+
+    // Account info
+    --account-info-bg-color: #f6f6f6;
+    --account-info-icon-bg-color: #fff;
 }
